@@ -2034,29 +2034,18 @@ function RCLootCouncil_Mainframe.raidTestFrames(arg)
 
 			-- increase MAX_ITEMS or run multiple tests to test large loot table
 			local table = {
-				105473,
-				105407,
-				105513,
-				105465,
-				105482,
-				104631,
-				105450,
-				105537,
-				104554,
-				105509,
-				104412,
-				105499,
-				104476,
-				104544,
-				104495,
-				105568,
-				105594,
-				105514,
-				105479,
-				104532,
-				105639,
-				104508,
-				105621,
+				71614,
+				71613,
+				71616,
+				71612,
+				71610,
+				69150,
+				69110,
+				69167,
+				71615,
+				70723,
+				71797,
+				71611
 			}
 			-- get the client to cache all test items
 			for i = 1, #table do
