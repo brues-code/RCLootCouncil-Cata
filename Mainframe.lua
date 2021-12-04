@@ -368,11 +368,11 @@ function RCLootCouncil.EventHandler(self2, event, ...)
 						end
 						local _, _, lootQuantity, lootRarity = GetLootSlotInfo(i)
 						-- check if we should autoAward it, otherwise check if we should loot it
-						if db.autoAward and LootSlotHasItem(i) and lootQuantity > 0 and (lootRarity >= db.autoAwardQualityLower and lootRarity <= db.autoAwardQualityUpper) then
+						if db.autoAward and LootSlotIsItem(i) and lootQuantity > 0 and (lootRarity >= db.autoAwardQualityLower and lootRarity <= db.autoAwardQualityUpper) then
 							RCLootCouncil:AutoAward(i, db.autoAwardTo, GetLootSlotLink(i))
 
 						elseif db.autoLooting then
-							if (LootSlotHasItem(i) or db.lootEverything) and lootQuantity > 0 and lootRarity >= GetLootThreshold() then -- Check wether we want to loot the item or not
+							if (LootSlotIsItem(i) or db.lootEverything) and lootQuantity > 0 and lootRarity >= GetLootThreshold() then -- Check wether we want to loot the item or not
 								-- now that we know it's an lootable item, lets also check if we should loot BoE's
 								if RCLootCouncil:LootBoE(GetLootSlotLink(i)) then
 									tinsert(lootTable, GetLootSlotLink(i)) -- add the item link to the table
