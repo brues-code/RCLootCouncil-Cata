@@ -176,6 +176,29 @@ for i = 5, defaults.profile.dbToSend.maxButtons do
 	}
 end
 
+function UnitIsGroupLeader()
+	return IsRaidLeader() or IsPartyLeader()
+end
+
+function UnitIsGroupAssistant()
+	return IsRaidOfficer()
+end
+
+function IsInGroup()
+	return GetNumPartyMembers() > 0 or GetNumRaidMembers() > 0
+end
+
+function IsInRaid()
+	return GetNumRaidMembers() > 0
+end
+
+function GetNumGroupMembers()
+	if GetNumRaidMembers() > 0 then
+		return GetNumRaidMembers()
+	end
+	return GetNumPartyMembers()
+end
+
 function RCLootCouncil:OnInitialize()
 	self:RegisterChatCommand("rc", "ChatCommand")
     self:RegisterChatCommand("rclc", "ChatCommand")
@@ -2489,14 +2512,6 @@ function RCLootCouncil_Mainframe:DisplayNote(id)
 	GameTooltip:AddLine("Notes")
 	GameTooltip:AddLine(entryTable[currentSession][id][13],1,1,1)
 	GameTooltip:Show()
-end
-
-function IsInGroup()
-	return GetNumPartyMembers() > 0 or GetNumRaidMembers() > 0
-end
-
-function IsInRaid()
-	return GetNumRaidMembers() > 0
 end
 
 -------------- DebugLogAdd --------------------
