@@ -491,7 +491,6 @@ function RCLootCouncil:OnCommReceived(prefix, msg, distri, sender)
 	msg						- Message to display
 --]]
 	if prefix == "RCLootCouncil" then
-		sender = Ambiguate(sender, "none")
 		local cmd, object = strsplit(" ", msg, 2) -- split the command from the object
 		if cmd and object then
 			self:debugS("Comm received, cmd: "..cmd..", object: "..object..", sender: "..sender)
@@ -1653,7 +1652,6 @@ function RCLootCouncil_Mainframe.getGuildRankNum(playerName)
 	if playerName then
 		for ci=1, GetNumGuildMembers() do
 			local name, rank, rankIndex = GetGuildRosterInfo(ci)
-			name = Ambiguate(name, "none")
 			if name == playerName then
 				return rankIndex, rank
 			end
@@ -1865,7 +1863,6 @@ function RCLootCouncil_Mainframe.setRank(rank)
 	GuildRoster()
 	for i = 1, GetNumGuildMembers() do
 		local name, _, rankIndex = GetGuildRosterInfo(i) -- get info from all guild members
-		name = Ambiguate(name, "none")
 		if rankIndex + 1 <= db.minRank then -- if the member is the required rank, or above
 			table.insert(db.council, name) -- then insert them to the council
 		end

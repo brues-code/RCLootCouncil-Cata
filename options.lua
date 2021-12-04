@@ -817,7 +817,6 @@ function RCLootCouncil:GetGuildOptions()
 						wipe(names)
 						for ci = 1, GetNumGuildMembers() do
 							local name, rank1, rankIndex = GetGuildRosterInfo(ci);
-							name = Ambiguate(name, "none")
 							if (rankIndex + 1) == i then tinsert(names, name) end
 						end
 						table.sort(names, function(v1, v2)
