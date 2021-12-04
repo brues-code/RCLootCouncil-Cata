@@ -2494,6 +2494,14 @@ function RCLootCouncil_Mainframe:DisplayNote(id)
 	GameTooltip:Show()
 end
 
+function IsInGroup()
+	return GetNumPartyMembers() > 0 or GetNumRaidMembers() > 0
+end
+
+function IsInRaid()
+	return GetNumRaidMembers() > 0
+end
+
 -------------- DebugLogAdd --------------------
 function RCLootCouncil:DebugLogAdd(msg)
 	if not IsInRaid() or nnp then return end -- don't log outside raid
