@@ -1,5 +1,5 @@
 ## Author: Potdisc
-## Interface: 50400
+## Interface: 40300
 ## Notes: Interface for running a Loot Council
 ## SavedVariables: RCLootCouncilDB
 ## Title: RCLootCouncil
