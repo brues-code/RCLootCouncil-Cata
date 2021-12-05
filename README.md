@@ -1,11 +1,9 @@
 # RCLootCouncil 2.0.3 for 3.3.5 
 
-This is RCLootCouncil 2.0.3 (legion version) backported to work with 3.3.5a. 
+This is RCLootCouncil 2.0.3 (legion version) backported to work with 3.3.5a then updated to work with 4.3.4. 
 Supports t7 / 8 / 9 / 10 tier tokens as well.
 
-Supports most if not all 3.3.5 WoTLK servers.
-
-**Supports [Ascension](https://ascension.gg)**
+Programmed with Apollo 3 in mind.
 
 
 # Additional Features
