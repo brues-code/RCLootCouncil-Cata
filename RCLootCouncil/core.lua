@@ -1127,18 +1127,13 @@ function RCLootCouncil:CreateResponse(session, link, ilvl, response, equipLoc, n
 		diff = (ilvl - select(4, GetItemInfo(g2)))
 	end
 
-	local ilvl = GearScore_GetScore and GearScore_GetScore(UnitName("player"), "player") or 0
-	if ilvl == 0 then 
-		if GS_Data then 
-			ilvl = GS_Data[GetRealmName()].Players[UnitName("player")].GearScore or 0
-		end
-	end
+	local plrILvl = ("%.2f"):format(select(2, GetAverageItemLevel()))
 	return
 		session,
 		self.playerName,
 		{	gear1 = g1,
 			gear2 = g2,
-			ilvl = ilvl,
+			ilvl = plrILvl,
 			diff = diff,
 			note = note,
 			response = response
