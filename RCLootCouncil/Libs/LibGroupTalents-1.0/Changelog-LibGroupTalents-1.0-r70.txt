@@ -1,0 +1,8 @@
+------------------------------------------------------------------------
+r70 | oscarucb | 2012-05-19 12:06:09 +0000 (Sat, 19 May 2012) | 2 lines
+Changed paths:
+   M /trunk/LibGroupTalents-1.0.lua
+
+fix ticket #13 - return all 9 glyphs from GetUnitGlyphs
+
+------------------------------------------------------------------------
