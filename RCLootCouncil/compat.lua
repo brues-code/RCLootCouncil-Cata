@@ -30,7 +30,10 @@ function addon:UnitIsGroupLeader(unit)
 			end
 		end
 	elseif self:IsInGroup() then
-		local leaderIndex = GetPartyLeaderIndex()
-		return unitName == UnitName("party"..leaderIndex)
+		return UnitIsPartyLeader(unit) == 1
 	end
+end
+
+function addon:UnitIsGroupAssistant(unit)
+	return UnitIsRaidOfficer(unit) == 1
 end
