@@ -33,7 +33,7 @@ function RCVotingFrame:OnInitialize()
 		{ name = L["Name"],														sortnext = 4,		width = 80},	-- 2 Candidate Name
 		{ name = L["Rank"],		comparesort = GuildRankSort,					sortnext = 4,		width = 95},	-- 3 Guild rank
 		{ name = L["Response"],	comparesort = ResponseSort,						sortnext = 6,		width = 240},	-- 4 Response
-		{ name = L["ilvl"],														sortnext = 9,		width = 45},	-- 5 Total ilvl
+		{ name = L["ilvl"],														sortnext = 9,		width = 50},	-- 5 Total ilvl
 		{ name = L["Diff"],														sortnext = 5,		width = 40},	-- 6 ilvl difference
 		{ name = L["g1"],			align = "CENTER",							sortnext = 5,		width = ROW_HEIGHT},	-- 7 Current gear 1
 		{ name = L["g2"],			align = "CENTER",							sortnext = 5,		width = ROW_HEIGHT},	-- 8 Current gear 2
