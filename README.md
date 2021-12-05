@@ -1,13 +1,8 @@
-# RCLootCouncil 2.0.3 for 3.3.5 
+# RCLootCouncil 2.0.3 for 4.3.4
 
 This is RCLootCouncil 2.0.3 (legion version) backported to work with 3.3.5a then updated to work with 4.3.4. 
-Supports t7 / 8 / 9 / 10 tier tokens as well.
+Supports t11-13 tier tokens as well.
 
-Programmed with Apollo 3 in mind.
-
-
-# Additional Features
-## Integrated with [RaidAssist Backport](https://github.com/ajseward/RaidAssist_WotLK/) to display if an item is on your bislist or not when rolling. Works fine without it.
 
 highlights items that are on your RaidAssist bis list if you don't already have them.
 
