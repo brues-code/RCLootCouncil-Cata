@@ -62,8 +62,8 @@ function RCVersionCheck:OnCommReceived(prefix, serializedMsg, distri, sender)
 		local decoded_msg = Deflate:DecodeForPrint(serializedMsg)
     	local decompressed_msg = Deflate:DecompressDeflate(decoded_msg)
 		local ok, command, data = addon:Deserialize(decompressed_msg)
-		if ok and command == "verTestReply" then 
-			self:AddEntry(sender, data[1], data[2], data[3], data[3])
+		if ok and command == "verTestReply" then
+			self:AddEntry(sender, unpack(data))
 		end
 	end
 end
