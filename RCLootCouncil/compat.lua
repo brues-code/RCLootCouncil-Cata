@@ -20,7 +20,7 @@ end
 function addon:UnitIsGroupLeader(unit)
 	local unitName = UnitName(unit)
 	if unit == "player" or unitName == UnitName("player") then
-		return (IsRaidLeader() or IsPartyLeader()) == 1
+		return IsRaidLeader() or IsPartyLeader()
 	end
 	if self:IsInRaid() then
 		for i = 1, MAX_RAID_MEMBERS do
@@ -30,10 +30,9 @@ function addon:UnitIsGroupLeader(unit)
 			end
 		end
 	elseif self:IsInGroup() then
-		return UnitIsPartyLeader(unit) == 1
+		return UnitInParty(unit) and UnitIsPartyLeader(unit)
 	end
 end
-
 function addon:UnitIsGroupAssistant(unit)
 	return UnitIsRaidOfficer(unit) == 1
 end
