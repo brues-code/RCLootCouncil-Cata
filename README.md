@@ -1,9 +1,11 @@
 # RCLootCouncil 2.0.3 for 4.3.4
 
-This is RCLootCouncil 2.0.3 (legion version) backported to work with 3.3.5a then updated to work with 4.3.4. 
+This is RCLootCouncil 2.0.3 (legion version) backported to work with 3.3.5a then updated for 4.3.4. 
 Supports t11-13 tier tokens as well.
 
+WotLK Version: https://github.com/ajseward/RcLootCouncil-Wotlk/
 
+# Additional Features
 highlights items that are on your RaidAssist bis list if you don't already have them.
 
 ![](https://i.imgur.com/fHlgz2y.png)
