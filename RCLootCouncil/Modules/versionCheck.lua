@@ -23,7 +23,7 @@ end
 function RCVersionCheck:OnEnable()
 	self.frame = self:GetFrame()
 	self:RegisterComm("RCLootCouncil")
-	self:RegisterComm("RCLootCouncil_WotLK")
+	self:RegisterComm("RCLC_Cata")
 	self:Show()
 end
 
@@ -58,7 +58,7 @@ function RCVersionCheck:OnCommReceived(prefix, serializedMsg, distri, sender)
 		if test and command == "verTestReply" then
 			self:AddEntry(unpack(data))
 		end
-	elseif prefix == "RCLootCouncil_WotLK" then -- TODO: Remove later when everyone has updated.
+	elseif prefix == "RCLC_Cata" then -- TODO: Remove later when everyone has updated.
 		local decoded_msg = Deflate:DecodeForPrint(serializedMsg)
     	local decompressed_msg = Deflate:DecompressDeflate(decoded_msg)
 		local ok, command, data = addon:Deserialize(decompressed_msg)
@@ -97,7 +97,7 @@ function RCVersionCheck:Query(group)
 	elseif group == "guild" then 
 		group = "GUILD" 
 	end
-	addon:SendCommMessage("RCLootCouncil_WotLK", encoded, group)
+	addon:SendCommMessage("RCLC_Cata", encoded, group)
 	self:AddEntry(addon.playerName, addon.playerClass, addon.guildRank, addon.version, addon.tVersion) -- add ourself
 	self:ScheduleTimer("QueryTimer", 5)
 end

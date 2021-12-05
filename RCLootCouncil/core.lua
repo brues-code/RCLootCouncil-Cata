@@ -222,7 +222,7 @@ function RCLootCouncil:OnInitialize()
 	self:RegisterChatCommand("rc", "ChatCommand")
   	self:RegisterChatCommand("rclc", "ChatCommand")
 	self:RegisterComm("RCLootCouncil")
-	self:RegisterComm("RCLootCouncil_WotLK")
+	self:RegisterComm("RCLC_Cata")
 	self.db = LibStub("AceDB-3.0"):New("RCLootCouncilDB", self.defaults, true)
 	self.lootDB = LibStub("AceDB-3.0"):New("RCLootCouncilLootDB")
 	--[[ Format:
@@ -743,7 +743,7 @@ function RCLootCouncil:OnCommReceived(prefix, serializedMsg, distri, sender)
 			end
 			self:Debug("Error in deserializing comm:", command, data);
 		end
-	elseif prefix == "RCLootCouncil_WotLK" then 
+	elseif prefix == "RCLC_Cata" then 
 		local decoded_msg = Deflate:DecodeForPrint(serializedMsg)
     	local decompressed_msg = Deflate:DecompressDeflate(decoded_msg)
 		local ok, command, data = self:Deserialize(decompressed_msg)
@@ -754,7 +754,7 @@ function RCLootCouncil:OnCommReceived(prefix, serializedMsg, distri, sender)
 				local serialized_data = self:Serialize("verTestReply", sendData)
 				local compressed_data = Deflate:CompressDeflate(serialized_data, deflate_level)
 				local encoded = Deflate:EncodeForPrint(compressed_data)
-				self:SendCommMessage("RCLootCouncil_WotLK", encoded, "WHISPER", sender)
+				self:SendCommMessage("RCLC_Cata", encoded, "WHISPER", sender)
 			end
 		end
 		
